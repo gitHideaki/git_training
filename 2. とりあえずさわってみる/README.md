@@ -152,10 +152,14 @@ githubに接続する時はこの鍵を使うということをデバイスに�
 cd ~/.ssh
 
 # github.comにアクセスするときは作成した鍵を使うようにconfig作成
-Write-Output "Host github github.com
->>   HostName github.com
->>   IdentityFile ~/.ssh/<作成した秘密鍵名>
->>   User git" | Out-File config -Encoding utf8
+$content = @"
+Host github
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+"@
+$utf8NoBom = New-Object System.Text.UTF8Encoding $false
+[System.IO.File]::WriteAllText("$HOME\.ssh\config", $content, $utf8NoBom)
 
 # githubへ接続確認
 ssh -T github
