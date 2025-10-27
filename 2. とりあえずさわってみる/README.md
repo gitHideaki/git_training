@@ -110,6 +110,8 @@ https://github.com/
 
 ssh-keygenコマンドを利用しssh鍵を作成します。
 ```sh
+# 都合上ホームディレクトリの.sshに移動して作業します。
+cd ~/.ssh
 # 鍵作成
 ssh-keygen -t ed25519 -C "<登録メールアドレス>" -f "<任意の鍵名>"
 # 出力例
