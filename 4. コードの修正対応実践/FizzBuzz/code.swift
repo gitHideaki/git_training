@@ -1,7 +1,7 @@
 // swiftのFizzBuzz
 
 func fizzbuzz() {
-    for i in 1..100 {
+    for i in 1...100 { // 「..」を「...」に直した
         if i % 15 == 0 {
             print("FizzBuzz")
         } else if i % 3 == 0 {
