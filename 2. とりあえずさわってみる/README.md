@@ -65,7 +65,7 @@ Write-Output "Import-Module posh-git" | Out-File $PROFILE -Append
 
 <div class="box green">
 
-## bosh-gitってなに？
+## posh-gitってなに？
 
 Powershellでgitを管理する際便利なツール。コマンドにtabが効く様になる他管理しているリポジトリの情報の表示が行えるようになります。
 </div> 
@@ -113,7 +113,7 @@ ssh-keygenコマンドを利用しssh鍵を作成します。
 # 都合上ホームディレクトリの.sshに移動して作業します。
 cd ~/.ssh
 # 鍵作成
-ssh-keygen -t ed25519 -C "<登録メールアドレス>" -f "<任意の鍵名>"
+ssh-keygen -t ed25519 -C "<登録メールアドレス>"
 # 出力例
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (~/.ssh/id_ed25519): [Enterキー]
@@ -121,7 +121,7 @@ Enter passphrase (empty for no passphrase): [オプションでパスワード�
 # パスワードは無くてもよい
 
 # 公開鍵情報確認
-cat "./<任意の鍵名>.pub"
+cat "./id_ed25519.pub"
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEgu/syui3Uq//******************************* <メールアドレス>
 # 公開鍵情報をGitHubに登録します。
 ```
@@ -483,6 +483,7 @@ git clone git@github.com:<アカウント名>/<リポジトリ名y>.git alt_book
 alt_booksでファイルを追加します。
 
 ```powershell
+cd alt_books
 New-Item alt_test.txt
 git add alt_test.txt
 git commit -m "add alt_test.txt"
