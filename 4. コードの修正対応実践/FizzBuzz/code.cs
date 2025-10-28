@@ -2,15 +2,24 @@
 using System;
 
 public class FizzBuzz {
-    public static void Main(string[] args) {
-        for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0) {
-                Console.WriteLine("Fizz");
-            } else if (i % 5 == 0) {
-                Console.WriteLine("Buzz");
-            } else if (i % 15 == 0){
+    public static void Main(string[] args) 
+    {
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 15 == 0)
+            {
                 Console.WriteLine("FizzBuzz");
-            } else {
+            }
+            else if (i % 3 == 0)
+            {
+                Console.WriteLine("Fizz");
+            }
+            else if (i % 5 == 0)
+            {
+                Console.WriteLine("Buzz");
+            }
+            else
+            {
                 Console.WriteLine(i);
             }
         }
