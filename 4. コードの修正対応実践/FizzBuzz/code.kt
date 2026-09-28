@@ -1,6 +1,6 @@
 // kotlinのFizzBuzz
 
-func main() {
+fun main() {
     for (i in 1..100) {
         if (i % 15 == 0) {
             println("FizzBuzz")
