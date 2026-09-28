@@ -12,5 +12,6 @@ function fizzbuzz() {
       console.log(i);
   }
 }
+}
 
 fizzbuzz();
